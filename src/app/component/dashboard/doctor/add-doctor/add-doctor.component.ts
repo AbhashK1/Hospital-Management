@@ -19,6 +19,8 @@ export class AddDoctorComponent implements OnInit {
   department!:string;
   dateofbirth!:string;
   qualification!:string;
+  id!:string;
+  buttonName!:string;
 
   departments: string[] =['Medicine', 'Surgery', 'Gynaecology', 'Obstetrics', 'Paediatrics', 'Eye', 'ENT', 'Dental', 'Orthopaedics', 'Neurology', 'Cardiology', 'Psychiatry', 'Skin', 'V.D.', 'Plastic Surgery', 'Nuclear Medicine', 'Infectious disease'];
 
@@ -28,18 +30,27 @@ export class AddDoctorComponent implements OnInit {
     private dialogRef : MatDialogRef<AddDoctorComponent>
   ) { 
     this.title=data.title;
+    this.id=data.id;
+    this.name=data.name;
+    this.mobile=data.mobile;
+    this.email=data.email;
+    this.gender=data.gender;
+    this.department=data.department;
+    this.dateofbirth=data.dateofbirth;
+    this.qualification=data.qualification;
+    this.buttonName=data.buttonName;
   }
 
   ngOnInit(): void {
     this.form=this.fb.group({
-      id:['',[]],
-      name:['',[]],
-      mobile:['', [Validators.required,Validators.maxLength(10), Validators.minLength(10)]],
-      email:['',[Validators.required, Validators.email]],
-      gender:['',[Validators.required]],
-      department:['',[Validators.required]],
-      dateofbirth:['',[Validators.required]],
-      qualification:['',[Validators.required]]
+      id:[this.id,[]],
+      name:[this.name,[]],
+      mobile:[this.mobile, [Validators.required,Validators.maxLength(10), Validators.minLength(10)]],
+      email:[this.email,[Validators.required, Validators.email]],
+      gender:[this.gender,[Validators.required]],
+      department:[this.department,[Validators.required]],
+      dateofbirth:[this.dateofbirth,[Validators.required]],
+      qualification:[this.qualification,[Validators.required]]
     })
   }
 

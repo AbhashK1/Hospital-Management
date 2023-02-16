@@ -20,6 +20,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { AddDoctorComponent } from './component/dashboard/doctor/add-doctor/add-doctor.component';
 import { FormsModule, ReactiveFormsModule, FormGroupDirective } from '@angular/forms';
+import { DeleteDoctorComponent } from './component/dashboard/doctor/delete-doctor/delete-doctor.component';
+import { ViewDoctorComponent } from './component/dashboard/doctor/view-doctor/view-doctor.component';
+import { AddPatientComponent } from './component/dashboard/patient/add-patient/add-patient.component';
 
 @NgModule({
     declarations: [
@@ -27,7 +30,10 @@ import { FormsModule, ReactiveFormsModule, FormGroupDirective } from '@angular/f
         DoctorComponent,
         PatientComponent,
         SidebarComponent,
-        AddDoctorComponent
+        AddDoctorComponent,
+        DeleteDoctorComponent,
+        ViewDoctorComponent,
+        AddPatientComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

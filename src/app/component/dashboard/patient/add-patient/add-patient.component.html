@@ -8,26 +8,20 @@
             <div>
                 <mat-form-field >
                     <mat-label>Full Name</mat-label>
-                    <input matInput placeholder="" formControlName="name" required>
-                    <mat-error *ngIf="form.get('name')?.invalid || form.get('name')?.dirty || form.get('name')?.touched">Enter Valid Name</mat-error>
+                    <input matInput placeholder="" formControlName="patient_name" required>
+                    <mat-error *ngIf="form.get('patient_name')?.invalid || form.get('patient_name')?.dirty || form.get('patient_name')?.touched">Enter Valid Name</mat-error>
                   </mat-form-field>
 
                   <mat-form-field >
                     <mat-label>Mobile Number </mat-label>
-                    <input matInput placeholder="9876543210" formControlName="mobile" required>
+                    <input matInput placeholder="" formControlName="mobile" required>
                     <mat-error *ngIf="form.get('mobile')?.invalid || form.get('mobile')?.dirty || form.get('mobile')?.touched">Enter Valid Mobile Number</mat-error>
                   </mat-form-field> 
-                  
-                  <mat-form-field >
-                    <mat-label>Email</mat-label>
-                    <input matInput placeholder="pat@example.com" formControlName="email" required>
-                    <mat-error *ngIf="form.get('email')?.invalid || form.get('email')?.dirty || form.get('email')?.touched">Enter Valid EmailID</mat-error>
-                  </mat-form-field>
 
                   <mat-form-field >
-                    <mat-label>Qualification</mat-label>
-                    <input matInput placeholder="ex. MBBS" formControlName="qualification" required>
-                    <mat-error *ngIf="form.get('qualification')?.invalid || form.get('qualification')?.dirty || form.get('qualification')?.touched">Enter Valid Qualification</mat-error>
+                    <mat-label>Prescription</mat-label>
+                    <input matInput placeholder="" formControlName="prescription" required>
+                    <mat-error *ngIf="form.get('prescription')?.invalid || form.get('prescription')?.dirty || form.get('prescription')?.touched">Enter Valid Prescription</mat-error>
                   </mat-form-field>
             </div>
             
@@ -44,22 +38,22 @@
                   </mat-radio-group>  
                   
                   <mat-form-field class="mt-4">
-                    <mat-label>Department</mat-label>
-                    <mat-select formControlName="department" name="department">
-                      <mat-option *ngFor="let department of departments" [value]="department">
-                        {{department}}
+                    <mat-label>Assigned Doctor</mat-label>
+                    <mat-select formControlName="doctor_id" name="doctor_id">
+                      <mat-option *ngFor="let doctor of allDoctors" [value]="doctor.doctor_id">
+                        {{doctor.doctor_name}}
                       </mat-option>
                     </mat-select>
                   </mat-form-field>
 
                   <mat-form-field>
-                    <mat-label>Date of Birth</mat-label>
-                    <input matInput [matDatepicker]="picker" formControlName="dateofbirth">
+                    <mat-label>Admission Date</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="admission_date">
                     <mat-hint>MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matSuffix [for]="picker">
                     </mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
-                    <mat-error *ngIf="form.get('dateofbirth')?.invalid || form.get('dateofbirth')?.dirty || form.get('dateofbirth')?.touched">Choose Valid Date of Birth</mat-error>
+                    <mat-error *ngIf="form.get('admission_date')?.invalid || form.get('admission_date')?.dirty || form.get('admission_date')?.touched">Choose Valid Admission Date</mat-error>
                   </mat-form-field>
                   
             </div>
@@ -70,5 +64,5 @@
 
 <div mat-dialog-actions>
     <button mat-raised-button mat-dialog-close (click)="cancelRegistration()">Cancel</button>
-    <button mat-raised-button color="primary" mat-dialog-close cdkFocusInitial (click)="registerDoctor()" [disabled]="form.invalid">{{buttonName}}</button>
+    <button mat-raised-button color="primary" mat-dialog-close cdkFocusInitial (click)="registerPatient()" [disabled]="form.invalid">{{buttonName}}</button>
   </div>
