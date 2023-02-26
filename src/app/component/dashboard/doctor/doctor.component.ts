@@ -98,7 +98,6 @@ export class DoctorComponent implements OnInit {
         return data;
       })
 
-      console.log(this.doctorsArr);
       this.dataSource=new MatTableDataSource(this.doctorsArr);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;

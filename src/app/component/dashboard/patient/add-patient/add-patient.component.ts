@@ -32,7 +32,7 @@ export class AddPatientComponent implements OnInit {
   ) { 
     this.title=data.title;
     this.patient_id=data.id;
-    this.patient_name=data.name;
+    this.patient_name=data.patient_name;
     this.mobile=data.mobile;
     this.gender=data.gender;
     this.admission_date=data.admission_date;
@@ -66,7 +66,6 @@ export class AddPatientComponent implements OnInit {
         }
         return doctor;
     })
-    //console.log(this.allDoctors);
   })
   }
 
