@@ -25,6 +25,7 @@ import { ViewDoctorComponent } from './component/dashboard/doctor/view-doctor/vi
 import { AddPatientComponent } from './component/dashboard/patient/add-patient/add-patient.component';
 import { DeletePatientComponent } from './component/dashboard/patient/delete-patient/delete-patient.component';
 import { ViewPatientComponent } from './component/dashboard/patient/view-patient/view-patient.component';
+import { LoginComponent } from './component/auth/login/login.component';
 
 @NgModule({
     declarations: [
@@ -37,7 +38,8 @@ import { ViewPatientComponent } from './component/dashboard/patient/view-patient
         ViewDoctorComponent,
         AddPatientComponent,
         DeletePatientComponent,
-        ViewPatientComponent
+        ViewPatientComponent,
+        LoginComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
